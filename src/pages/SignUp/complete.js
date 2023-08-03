@@ -5,6 +5,7 @@ import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import Calendar from '../../../assets/svg/calendar';
 import * as Location from 'expo-location';
 import Patent from '../../../assets/svg/dropPatent';
+import { useNavigation } from '@react-navigation/native';
 
 const Complete = () => {
   const [profileImage, setProfileImage] = useState(null);
@@ -13,7 +14,7 @@ const Complete = () => {
   const [show, setShow] = useState(false);
   const [location, setLocation] = useState(null);
   const [address, setAddress] = useState(null);
-
+  const navigation = useNavigation();
 
   useEffect(() => {
     (async () => {
@@ -90,7 +91,7 @@ organizadores de eventos que você participar e administradores da sua equipe.</
         <TouchableOpacity  onPress={handleSelectProfileImage}>
         <Image
           source={profileImage ? { uri: profileImage } : require('./sem_avatar.png')}
-          style={{ width: 141, height: 141 }}
+          style={{ width: 141, height: 141,borderRadius:100 }}
         />
         </TouchableOpacity>
        

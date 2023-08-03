@@ -36,6 +36,7 @@ return(
         
 <TextInput 
 autoCapitalize="characters"
+keyboardType="number-pad"
 onChangeText={handleChangeText}
 value={value}
 style={{fontSize:30,color:'#A6A7AB',paddingLeft:15, borderWidth:0.5,borderColor:'#A6A7AB',width:345,height:59,borderRadius:10,marginTop:20,marginBottom:20}}/>

@@ -19,6 +19,14 @@ export default SignUp = () =>{
     const [email,setEmail] = useState();
     const [password,setPassword] = useState();
 
+
+    function generateVerificationCode() {
+        const min = 100000;
+        const max = 999999;
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      
+    
 const handleRegister = ()=>{
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -27,8 +35,8 @@ const handleRegister = ()=>{
       sendEmailVerification(auth.currentUser)
       
         .then(() => {
-            alert('Enviamos um email para confirmação!'+
-                    'Verifique sua caixa de entrada!')
+            alert('Enviamos um email para confirmação!' +'                             '+
+            'Esse é o codigo de verificação: ' +  generateVerificationCode() )
                     navigation.navigate('Verification')
         });
     })
@@ -64,7 +72,7 @@ return(
         placeholderTextColor={'#7777'}
         keyboardType="email-address"
         autoCapitalize="none"
-        style={{paddingLeft:15,borderWidth:0.5,borderColor:'#A6A7AB',width:345,height:51,borderRadius:5,marginTop:8,color:'#A6A7AB'}}/>
+        style={{paddingLeft:15,borderWidth:0.5,borderColor:'#A6A7AB',width:345,height:51,borderRadius:9,marginTop:8,color:'#A6A7AB'}}/>
         <View style={{top:19,left:22,backgroundColor:'#18191A',width:102,height:20,zIndex:1}}>
         <Text style={{color:'#FFF',textAlign:'center'}}>
         Nome de guerra
@@ -73,7 +81,7 @@ return(
         <TextInput 
         placeholderTextColor={'#7777'}
     placeholder="Como você quer ser chamado ?"
-        style={{paddingLeft:15,borderWidth:0.5,borderColor:'#A6A7AB',width:345,height:51,borderRadius:5,marginTop:8,color:'#A6A7AB'}}/>
+        style={{paddingLeft:15,borderWidth:0.5,borderColor:'#A6A7AB',width:345,height:51,borderRadius:9,marginTop:8,color:'#A6A7AB'}}/>
         <View style={{top:19,left:22,backgroundColor:'#18191A',width:42,height:20,zIndex:1}}>
         <Text style={{color:'#FFF',textAlign:'center'}}>
             Senha
@@ -87,7 +95,7 @@ return(
         keyboardType="number-pad"
         secureTextEntry={true}
         
-        style={{paddingLeft:15,borderWidth:0.5,borderColor:'#A6A7AB',width:345,height:51,borderRadius:5,marginTop:8,color:'#A6A7AB'}}/>
+        style={{paddingLeft:15,borderWidth:0.5,borderColor:'#A6A7AB',width:345,height:51,borderRadius:9,marginTop:8,color:'#A6A7AB'}}/>
         <View style={{top:30 ,left:22,backgroundColor:'#18191A',width:104,height:20,zIndex:1}}>
         <Text style={{color:'#FFF',textAlign:'center'}}>
         Confirmar senha 
@@ -99,7 +107,7 @@ placeholderTextColor={'#7777'}
 keyboardType="number-pad"
 secureTextEntry={true}
 
-style={{paddingLeft:15,borderWidth:0.5,borderColor:'#A6A7AB',width:345,height:51,borderRadius:5,marginTop:20,marginBottom:8,color:'#A6A7AB'}}/>
+style={{paddingLeft:15,borderWidth:0.5,borderColor:'#A6A7AB',width:345,height:51,borderRadius:9,marginTop:20,marginBottom:8,color:'#A6A7AB'}}/>
 <View style={{flexDirection:'row',alignItems:'center',marginBottom:24}}>
 
 
@@ -116,10 +124,10 @@ style={{paddingLeft:15,borderWidth:0.5,borderColor:'#A6A7AB',width:345,height:51
 <TouchableOpacity onPress={() => {
     if (isTrue) {
       handleRegister();
-}else{alert('Você precisa aceitar os termos!')}}} style={{width:345,height:51,backgroundColor:'#2374E1',justifyContent:'center',borderRadius:5}}>
+}else{alert('Você precisa aceitar os termos!')}}} style={{width:345,height:51,backgroundColor:'#2374E1',justifyContent:'center',borderRadius:9}}>
     <Text style={{color:'#FFF',fontSize:18,textAlign:'center',marginBottom:5}}>Criar</Text>
 </TouchableOpacity>
-<TouchableOpacity onPress={()=>navigation.navigate('SignIn')} style={{width:345,height:51,borderWidth:1,borderColor:'#2374E1',justifyContent:'center',borderRadius:5,marginTop:20}}>
+<TouchableOpacity onPress={()=>navigation.navigate('SignIn')} style={{width:345,height:51,borderWidth:1,borderColor:'#2374E1',justifyContent:'center',borderRadius:9,marginTop:20}}>
     <Text style={{color:'#2374E1',fontSize:18,textAlign:'center',marginBottom:5}}>Voltar</Text>
 </TouchableOpacity>
 
@@ -247,7 +255,7 @@ PASSO 8: Crie um jogo no editor interno do aplicativo.{'\n'}
 </Text></ScrollView>
     </View>
     <View style={{backgroundColor:'#000'}}>
-    <TouchableOpacity onPress={()=>setVisible(false)} style={{width:345,height:51,backgroundColor:'#2374E1',justifyContent:'center',borderRadius:5,alignSelf:'center',marginTop:26}}><Text style={{color:'#FFF',textAlign:'center'}}>Voltar</Text></TouchableOpacity>
+    <TouchableOpacity onPress={()=>setVisible(false)} style={{width:345,height:51,backgroundColor:'#2374E1',justifyContent:'center',borderRadius:9,alignSelf:'center',marginTop:26}}><Text style={{color:'#FFF',textAlign:'center'}}>Voltar</Text></TouchableOpacity>
     </View>
     </Modal>}
 

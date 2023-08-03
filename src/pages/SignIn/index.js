@@ -81,7 +81,7 @@ autoCapitalize="none"
             ,borderWidth:0.5,
             borderColor:'#A6A7AB',
             width:345,height:51,
-            borderRadius:5,
+            borderRadius:9,
             fontSize:16
             }}/>
         
@@ -104,14 +104,14 @@ style={{
     ,borderWidth:0.5,
     borderColor:'#A6A7AB',
     width:345,height:51,
-    borderRadius:5,
+    borderRadius:9,
     marginBottom:21,
     fontSize:16}}/>
 
-<TouchableOpacity onPress={handleLogin} style={{width:345,height:51,backgroundColor:'#2374E1',justifyContent:'center',borderRadius:5}}>
+<TouchableOpacity onPress={handleLogin} style={{width:345,height:51,backgroundColor:'#2374E1',justifyContent:'center',borderRadius:9}}>
     <Text style={{color:'#FFF',fontSize:18,textAlign:'center',marginBottom:5}}>Entrar</Text>
 </TouchableOpacity>
-<TouchableOpacity onPress={()=>navigation.navigate ('SignUp')} style={{width:345,height:51,borderWidth:1,borderColor:'#2374E1',justifyContent:'center',borderRadius:5,marginTop:20}}>
+<TouchableOpacity onPress={()=>navigation.navigate ('SignUp')} style={{width:345,height:51,borderWidth:1,borderColor:'#2374E1',justifyContent:'center',borderRadius:9,marginTop:20}}>
     <Text style={{color:'#2374E1',fontSize:18,textAlign:'center',marginBottom:5}}>Registrar</Text>
 </TouchableOpacity>
 <TouchableOpacity onPress={()=>navigation.navigate('PassNew')} style={{alignItems:'center',justifyContent:'center',width:'90%',marginTop:33}}>
