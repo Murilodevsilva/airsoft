@@ -1,0 +1,40 @@
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "plugins": ["react", "react-native"],
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "no-async-promise-executor": "off",
+    "react/display-name": "off",
+    "no-unused-vars": [
+      "error",
+      { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"]
+  },
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "excludedFiles": "*.test.js",
+      "rules": {
+        "no-undef": ["error", { "typeof": true }] // Permite o uso de variáveis não definidas pelo ESLint (como Location)
+      }
+    }
+  ]
+}
